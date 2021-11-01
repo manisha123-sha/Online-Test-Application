@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="col-md-8 offset-md-2 text-center">
+    <mat-card class="mb-3" *ngFor="let q of quizzes">
+      <h3 style="font-size: 2rem" class="mt-2" mat-card-title>
+        {{ q.title }}
+      </h3>
+      <p class="mb-2" mat-card-subtitle>{{ q.desc }}</p>
+      <mat-card-actions>
+        <span class="quiz-buttons">
+          <button mat-stroked-button color="primary">
+            Questions : {{ q.questions.length }}
+          </button>
+        </span>
+        <span class="quiz-buttons">
+          <button mat-stroked-button color="primary">
+            Max Marks : {{ q.questions.length * 10 }}
+          </button>
+        </span>
+        <span class="quiz-buttons">
+          <button mat-stroked-button color="primary">
+            Time Limit : {{ q.questions.length * 5 }} Minutes
+          </button>
+        </span>
+        <div class="mt-3 mb-2">
+          <button mat-flat-button color="primary" (click)="onClick(q)">
+            Take Quiz
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

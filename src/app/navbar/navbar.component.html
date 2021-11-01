@@ -1,0 +1,75 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: #b73a6e !important; color: white !important"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" mat-button routerLink="/">
+      <img class="navicon" src="assets/navicon.png" />
+      <span class="title">ONLINE TEST</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul
+        class="
+          navbar-nav
+          ms-auto
+          text-uppercase
+          ml-3 ml-lg-0
+          mt-2
+          mb-2 mb-lg-0
+          mt-lg-0
+        "
+      >
+        <li class="nav-item active">
+          <a
+            style="font-size: 1rem; color: white"
+            class="nav-link"
+            mat-button
+            routerLink="/"
+          >
+            <button mat-icon-button class="example-icon login-icon">
+              <mat-icon>home</mat-icon>
+            </button>
+            <span> Home </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            mat-button
+            style="font-size: 1rem; color: white"
+            class="nav-link"
+            routerLink="/results"
+          >
+            <button mat-icon-button class="example-icon">
+              <mat-icon>library_books</mat-icon>
+            </button>
+            <span>Results</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            style="font-size: 1rem; color: white"
+            class="nav-link"
+            mat-button
+            routerLink="/about"
+          >
+            <button mat-icon-button class="example-icon login-icon">
+              <mat-icon>groups</mat-icon>
+            </button>
+            <span> About </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,52 @@
+<div class="container mb-4">
+  <div class="container mt-4 col-md-8 offset-md-2">
+    <mat-card>
+      <h2
+        style="font-size: 2rem; font-weight: 400"
+        class="text-center mt-3"
+        [class]="isPassed ? 'text-success' : 'text-danger'"
+      >
+        {{
+          isPassed
+            ? "Congratulations! " + user.username
+            : "Sorry! " + user.username
+        }}
+      </h2>
+      <p style="font-size: 1rem; font-weight: 400" class="text-center mb-2">
+        {{
+          isPassed
+            ? "You have passed " + quizTitle + " quiz 🎉"
+            : "You have failed " + quizTitle + " quiz 😔"
+        }}! &nbsp; You have scored <b>{{ scoredMarks }}</b> out of
+        {{ totalMarks }}
+      </p>
+
+      <div class="container mt-5">
+        <div *ngFor="let ques of questions" class="mb-5">
+          <h4>Q). {{ ques.question }}</h4>
+          <p
+            style="padding-left: 10 px"
+            [style]="
+              givenAnswers[ques.sno - 1] === originalAnswers[ques.sno - 1]
+                ? 'background-color:#97cf8a'
+                : 'background-color:#FF7F7F'
+            "
+          >
+            Your answer:
+            {{ ques.options[givenAnswers[ques.sno - 1] - 1].value }}
+          </p>
+          <p style="padding-left: 10 px">
+            Right answer:
+            {{ ques.options[originalAnswers[ques.sno - 1] - 1].value }}
+          </p>
+        </div>
+      </div>
+
+      <div class="container text-center mb-5">
+        <button mat-raised-button color="primary" routerLink="/">
+          Take another quiz
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

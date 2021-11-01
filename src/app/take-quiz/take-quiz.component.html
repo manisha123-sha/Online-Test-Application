@@ -1,0 +1,50 @@
+<div class="container mt-3">
+  <div class="container col-md-10 offset-md-1">
+    <mat-card class="mb-2">
+      <h2 class="text-center mt10" style="font-size: 2rem; font-weight: 300">
+        Welcome {{ user.username }}
+      </h2>
+      <div class="container mb10">
+        <h4 class="ml10" style="font-size: 1.2rem; font-weight: 400">
+          Guidelines :-
+        </h4>
+        <ul style="font-size: 1rem">
+          <li>All questions are compulsary</li>
+          <li>Number of Questions are {{ noOfQuestions }}</li>
+          <li>Maximum marks is {{ noOfQuestions * 10 }}</li>
+          <li>Time limit is {{ noOfQuestions * 2 }} Minutes</li>
+          <li>Passing percantage is 50%</li>
+        </ul>
+        <h2 class="mt10 ml10 mb10" style="font-size: 2rem; font-weight: 300">
+          Quiz : {{ quizTitle }}
+        </h2>
+      </div>
+    </mat-card>
+
+    <mat-card class="mb-2" *ngFor="let ques of questions">
+      <h3 mat-card-title style="font-size: 1 rem">Q. {{ ques.question }}</h3>
+      <mat-card-content>
+        <div class="mt10" *ngFor="let opt of ques.options">
+          <input
+            required
+            type="radio"
+            id="answer_{{ ques.question }}"
+            [value]="opt.sno"
+            name="{{ ques.question }}"
+            (change)="onCheck(ques, opt)"
+            [checked]="opt.sno === givenAnswers[ques.sno - 1] ? true : false"
+          />
+          <label class="ml10" for="answers_{{ ques.question }}">{{
+            opt.value
+          }}</label>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="container text-center mt-3 pb-5">
+      <button mat-raised-button (click)="onSubmit()" color="primary">
+        Review & Submit
+      </button>
+    </div>
+  </div>
+</div>

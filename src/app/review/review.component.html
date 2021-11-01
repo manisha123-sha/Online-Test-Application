@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="container mt-3 mb-3 col-md-10 offset-md-1">
+    <mat-card>
+      <h2
+        class="text-center mt-3 mb-3"
+        style="font-size: 2rem; font-weight: 300"
+      >
+        Review
+      </h2>
+      <div *ngFor="let ques of questions">
+        <h4>Q). {{ ques.question }}</h4>
+        <p>
+          chosen answer:
+          {{ ques.options[givenAnswers[ques.sno - 1] - 1].value }}
+        </p>
+      </div>
+
+      <div class="conatiner text-center">
+        <button mat-raised-button color="accent" class="mr10" (click)="back()">
+          Back
+        </button>
+
+        <button mat-raised-button color="primary" (click)="submit()">
+          Submit
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

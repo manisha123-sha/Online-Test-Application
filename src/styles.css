@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+.cprimary {
+  color: rgb(202, 131, 170) !important;
+}
+.bgc-primary {
+  background-color: rgb(168, 131, 202) !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(223, 222, 222) !important;
+}
+
+button:hover {
+  color: rgb(147, 48, 204) !important;
+  background-color: rgb(228, 224, 224) !important;
+}
+a:hover {
+  color: rgb(204, 145, 238) !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mb20 {
+  margin-bottom: 20px !important;
+}
+.ml20 {
+  margin-left: 20px !important;
+}
+.mr20 {
+  margin-right: 20px !important;
+}
+
+.mt10 {
+  margin-top: 10px !important;
+}
+.mb10 {
+  margin-bottom: 10px !important;
+}
+.ml10 {
+  margin-left: 10px !important;
+}
+.mr10 {
+  margin-right: 10px !important;
+}
